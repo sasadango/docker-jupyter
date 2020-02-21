@@ -50,6 +50,12 @@ services:
 docker-compose up -d
 ```
 
+
+コンテナへアクセス
+```
+docker-jupyter % docker exec -it jupyter_lab bash
+```
+
 `docker-compose.yml` にて `work` ディレクトリを作成しているので、任意のソースやデータを配置して使用する
 
 
