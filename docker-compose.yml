@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+    jupyterlab:
+        container_name: "jupyter_lab"
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        ports:
+            - "10000:8888"
+        volumes:
+            - "./work:/home/jovyan/work"
+        environment: 
+            TZ: Asia/Tokyo
+            NB_UID: 501
+            GRANT_SUDO: "yes"
+        command: start.sh jupyter lab --NotebookApp.password=${NOTEBOOK_PASS}
+        
+        tty: true
