@@ -1,8 +1,7 @@
 # docker-jupyter
 
 # Feature
-jupyter lab
-
+Dockerでjupyter lab環境を構築できる
 
 # Usage
 ## コンテナを起動
