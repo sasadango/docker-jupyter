@@ -51,7 +51,7 @@ docker-compose up -d
 ```
 
 
-コンテナへアクセス
+## コンテナへアクセス (パスワードの設定後)
 ```
 docker-jupyter % docker exec -it jupyter_lab bash
 ```
