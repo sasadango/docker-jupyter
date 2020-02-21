@@ -25,8 +25,10 @@ from IPython.lib import passwd
 passwd()
 ```
 任意のパスワードを入力すると `SHA1` 文字列が得られる  
-この文字列を `docker-compose.yml` に記載することでパスワードによるアクセスが可能になる  
+この文字列を `.env` に定義し `docker-compose.yml` に渡してあげることでパスワードによるアクセスが可能になる  
 ```
+# docker-compsose.yml
+
 version: "3"
 
 services:
@@ -42,10 +44,14 @@ services:
         environment: 
             NB_UID: 501
             GRANT_SUDO: "yes"
-        command: start.sh jupyter lab --NotebookApp.password='sha1:hogehuga'
+        command: start.sh jupyter lab --NotebookApp.password=${NOTEBOOK_PASS}
         tty: true
 ```
-コンテナを再起動
+```
+# .env
+NOTEBOOK_PASS='sha1:hogehuga......'
+```
+最後にコンテナを再起動
 ```
 docker-compose up -d
 ```
