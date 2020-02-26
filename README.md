@@ -4,9 +4,12 @@
 Dockerでjupyter lab環境を構築できる
 
 # Usage
+## 作業ディレクトリを準備
+マウント用の`work`ディレクトリを作成しておく
+
 ## コンテナを起動
 ```
-docker-compose up --build
+docker-compose up -d --build
 ```
 `http://127.0.0.1:8888/?token=hogehuga` と表示される  
 ブラウザでアクセスして、トークンを入力するとnotebook展開される
@@ -61,7 +64,7 @@ docker-compose up -d
 docker-jupyter % docker exec -it jupyter_lab bash
 ```
 
-`docker-compose.yml` にて `work` ディレクトリを作成しているので、任意のソースやデータを配置して使用する
+`docker-compose.yml` にて `work` ディレクトリをマウントしているので、任意のソースやデータを配置して使用する
 
 
 # Note
