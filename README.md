@@ -9,9 +9,10 @@ Dockerでjupyter lab環境を構築できる
 
 ## コンテナを起動
 ```
-docker-compose up -d --build
+docker-compose up --build
 ```
 `http://127.0.0.1:8888/?token=hogehuga` と表示される  
+がdocker-compseにてポートを10000にしているので変更する  
 ブラウザでアクセスして、トークンを入力するとnotebook展開される
 
 ```
