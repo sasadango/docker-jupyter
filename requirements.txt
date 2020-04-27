@@ -1,4 +1,7 @@
 jupyterlab
+japanize-matplotlib
 
 mecab-python3
 wordcloud
+
+openpyxl
